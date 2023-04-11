@@ -1,0 +1,19 @@
+<button mat-raised-button class="mat-small" (click)="isLinear = !isLinear" id="toggle-linear">
+    <h5>{{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}</h5>
+  </button>
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup" label="Registro y cita de pacientes.">
+      <h1>holis 1</h1>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Gestión de usuarios">
+      <h1>holis 2</h1>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Preguntas o incomodidades</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>

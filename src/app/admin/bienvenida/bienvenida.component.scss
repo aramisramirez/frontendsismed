@@ -1,0 +1,23 @@
+#bienvenida {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#bienvenida p {
+  position: absolute;
+  margin-top: 20%;
+}
+
+img {
+  width: 100%;
+  box-shadow: none;
+  border-image: none;
+}
+
+p {
+  text-align: center !important; 
+  line-height: 2rem;
+  line-height: 3rem; 
+}
+
