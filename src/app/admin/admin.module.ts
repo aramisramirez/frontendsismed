@@ -25,7 +25,7 @@ import { ChatComponent } from './chat/chat.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
-
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,8 @@ import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
     MatPaginatorModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSelectModule
   ]
 })
 export class AdminModule { }
