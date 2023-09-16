@@ -3,3 +3,39 @@
 html, body { height: 100%;}
 @import 'ngx-toastr/toastr';
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #000000dd;}
+
+
+// h1 {
+//   font-size: 24px; /* Tamaño de fuente deseado */
+//   border-bottom: 2px solid #333; /* Borde inferior que actúa como subrayado */
+//   background-color: rgb(32, 63, 89);
+//   text-align: center;
+//   padding-bottom: 10px; /* Espacio entre el texto y el subrayado (ajusta según tus preferencias) */
+//   line-height: 1.2;
+// }
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  background-color: rgb(32, 63, 89);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.filtrosbusqueda {
+  width: 100%;
+}
+
+
+
+
+

@@ -34,9 +34,9 @@
 
     <mat-divider></mat-divider>
 
-    <button mat-button class="menu-button" [routerLink]="['ayudasistema']">
+    <button mat-button class="menu-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       <mat-icon>help</mat-icon>
-      <span>Ayuda</span>
+      <span>Acerca de</span>
     </button>
 
     <button mat-button class="menu-button" [routerLink]="['chatconsulta']">
@@ -57,3 +57,22 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Gracias por utilizar este sistema</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Este sistema fue hecho con mucho love ♥ bajo la gestion de los 3 mosqueperros.
+        <br>
+        Development by, <strong>TUANISOFT</strong> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entiendo</button>
+      </div>
+    </div>
+  </div>
+</div>

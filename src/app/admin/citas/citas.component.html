@@ -1,56 +1,93 @@
-<div class="text-center">
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-md-2 col-sm-12 mt-5">
-            <button mat-raised-button color="secondary">Registrar paciente</button>
-        </div>
-        <div class="col-md-2 col-sm-12 mt-5">
-            <button mat-raised-button color="warn">Consultar paciente</button>
-        </div>
-        <div class="col-md-2 col-sm-12 mt-5">
-            <button mat-raised-button color="primary">Programar cita</button>
-        </div>
-      </div>
-    </div>
-    <!-- <p>Selected date: {{ selected }}</p> -->
-  </div>
-  
-
-<div class="container">
+<div class="container mt-5">
   <div class="row justify-content-center">
-    <div class="col-md-8 col-sm-12 mt-5 text-center">
-        <mat-card >
-            <h4 class="mt-4">Busqueda de pacientes</h4>
-            
-            <form class="example-form ">
-                <div class="row justify-content-end">
-                    <div class="col-md-8 col-sm-12 mt-5 text-center">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Cédula</mat-label>
-                            <input matInput placeholder="000-000000-0000X">
-                          </mat-form-field>
-                        
-                          <mat-form-field class="example-full-width">
-                            <mat-label>Nombre completo</mat-label>
-                            <input matInput placeholder="Pablito Peréz">
-                          </mat-form-field>
-                    </div>
-                    <div class="col-md-1 col-sm-12 mt-5 text-center">
-                        <button mat-raised-button color="primary">Buscar</button>
-                    </div>
-                    <div class="col-12 mt-4">
-                        <h4>El paciente (Nombre), tiene o no cita en esta fecha (fecha)</h4>
-                    </div>
-                    <hr>
+    <div class="col-md-12 col-sm-12">
+      <mat-card>
+        <mat-card-content>
+          <h1>Registro de citas medicas.</h1>
+          <hr>
+          <button mat-flat-button color="accent" routerLink="../citasgestion">Nuevo registro</button>
+          <form class="example-form mt-3">
+            <div class="row">
+              <div class="col-6">
+                <mat-form-field class="filtrosbusqueda">
+                  <mat-label>Buscar por cedula</mat-label>
+                  <input matInput placeholder="000-000000-0000X">
+                </mat-form-field>
+              </div>
+              <div class="col-6">
+                <mat-form-field class="filtrosbusqueda">
+                  <mat-label>Buscar por nombre</mat-label>
+                  <input matInput placeholder="Nombre de la persona">
+                </mat-form-field>
+              </div>
+              <div class="col-md-2 col-sm-12">
+                <button mat-raised-button color="warn">Limpiar busqueda</button>
+              </div>
+              <div class="col-md-2 col-sm-12">
+                <button mat-raised-button color="accent">Buscar</button>
+              </div>
+            </div>
+
+          </form>
+
+          <hr>
+
+          <mat-table class="mt-5">
+            <!-- User name Definition -->
+            <ng-container matColumnDef="option">
+              <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
+              <mat-cell >
+                <div class="example-button-container">
+                  <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+                    <mat-icon>plus_one</mat-icon>
+                  </button>
                 </div>
-              </form>
-        </mat-card>
-      </div>
-    <div class="col-md-3 col-sm-12 mt-5">
-      <mat-card class="demo-inline-calendar-card">
-        <!-- <mat-calendar [(selected)]="selected"></mat-calendar> -->
-        <mat-calendar [dateClass]="getCssClass.bind(this)"></mat-calendar>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="username">
+              <mat-header-cell *matHeaderCellDef> Paciente </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.username}} </mat-cell>
+            </ng-container>
+
+            <!-- Age Definition -->
+            <ng-container matColumnDef="age">
+              <mat-header-cell *matHeaderCellDef> Fecha atención </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.age}} </mat-cell>
+            </ng-container>
+
+            <!-- Title Definition -->
+            <ng-container matColumnDef="title">
+              <mat-header-cell *matHeaderCellDef> Hora inicio </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
+            </ng-container>
+
+            <!-- Title Definition -->
+            <ng-container matColumnDef="hour">
+              <mat-header-cell *matHeaderCellDef> Hora fin </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.hour}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="estado">
+              <mat-header-cell *matHeaderCellDef> Activo </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.estado}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="datereg">
+              <mat-header-cell *matHeaderCellDef> Fecha registro </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.datereg}} </mat-cell>
+            </ng-container>
+
+
+            <!-- Header and Row Declarations -->
+            <mat-header-row *matHeaderRowDef="['option', 'username', 'age', 'title','hour', 'estado', 'datereg']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['option' ,'username', 'age', 'title', 'hour', 'estado', 'datereg']"></mat-row>
+          </mat-table>
+        </mat-card-content>
       </mat-card>
     </div>
   </div>
 </div>
+
+
+

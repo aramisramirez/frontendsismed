@@ -26,6 +26,7 @@ import { AyudaComponent } from './ayuda/ayuda.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
 import {MatSelectModule} from '@angular/material/select';
+import { FormCitasMedicasComponent } from './form-citas-medicas/form-citas-medicas.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatSelectModule} from '@angular/material/select';
     CitasComponent,
     ChatComponent,
     AyudaComponent,
-    FormUsuarioComponent
+    FormUsuarioComponent,
+    FormCitasMedicasComponent
   ],
   imports: [
     CommonModule,

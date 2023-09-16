@@ -6,6 +6,7 @@ import { CitasComponent } from './citas/citas.component';
 import { ChatComponent } from './chat/chat.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
+import { FormCitasMedicasComponent } from './form-citas-medicas/form-citas-medicas.component';
 
 const authroutes: Routes =[
   {
@@ -14,6 +15,7 @@ const authroutes: Routes =[
       {path: 'bienvenida', component: BienvenidaComponent, pathMatch:'full'},
       {path: 'usuarios', component: GestionUsuariosComponent, pathMatch: 'full'},
       {path: 'citasmedicas', component: CitasComponent, pathMatch: 'full'},
+      {path: 'citasgestion', component: FormCitasMedicasComponent, pathMatch: 'full'},
       {path: 'chatconsulta', component: ChatComponent, pathMatch: 'full'},
       {path: 'ayudasistema', component: AyudaComponent, pathMatch: 'full'},
       {path: 'formusuarios', component: FormUsuarioComponent, pathMatch: 'full'},
